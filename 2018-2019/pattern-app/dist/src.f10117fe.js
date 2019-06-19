@@ -85170,12 +85170,20 @@ function () {
   }
 
   CustomMap.prototype.addMarker = function (marker) {
-    new google.maps.Marker({
+    var _this = this;
+
+    var map = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: marker.location.lat,
         lng: marker.location.lng
       }
+    });
+    map.addListener('click', function () {
+      var infoWindow = new google.maps.InfoWindow({
+        content: 'Hi There!'
+      });
+      infoWindow.open(_this.googleMap, map);
     });
   };
 
