@@ -6,6 +6,7 @@ interface Marker {
         lat: number;
         lng: number;
     }
+    markerContent(): string;
 }
 
 export class CustomMap {
@@ -32,9 +33,9 @@ export class CustomMap {
 
         map.addListener('click', () => {
             const infoWindow = new google.maps.InfoWindow({
-                content: 'Hi There!'
+                content: marker.markerContent()
             });
-            
+
             infoWindow.open(this.googleMap, map)
         });
     }
