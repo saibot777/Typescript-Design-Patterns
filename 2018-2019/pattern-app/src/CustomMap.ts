@@ -1,6 +1,13 @@
 import { User } from "./User";
 import { Company } from "./Company";
 
+interface Marker {
+    location: {
+        lat: number;
+        lng: number;
+    }
+}
+
 export class CustomMap {
     private googleMap: google.maps.Map;
 
@@ -14,7 +21,7 @@ export class CustomMap {
         });
     }
 
-    public addMarker(marker: User | Company): void {
+    public addMarker(marker: Marker): void {
         new google.maps.Marker({
             map: this.googleMap,
             position: {
