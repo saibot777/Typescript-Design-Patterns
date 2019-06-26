@@ -41,7 +41,7 @@ export class LinkedList {
     }
 
     at(index: number): Node {
-        
+
         if (!this.head) {
             throw new Error('Index out of bounds');
         }
@@ -76,4 +76,17 @@ export class LinkedList {
         leftNode.data = rightNode.data;
         rightNode.data = leftHand;
     } 
+
+    print(): void {
+
+        if (!this.head) {
+            return
+        }
+
+        let node: Node | null = this.head;
+        while (node) {
+            console.log(node.data);
+            node = node.next
+        }
+    }
 }
