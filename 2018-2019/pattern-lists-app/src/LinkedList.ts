@@ -10,7 +10,18 @@ export class LinkedList {
     head: Node | null = null;
 
     get length(): number {
-        
+        if (!this.head) {
+            return 0
+        }
+
+        let length = 1;
+        let node = this.head;
+        while (node.next) {
+            length++
+            node = node.next;
+        }
+
+        return length;
     }
 
     add(data: number): void {
