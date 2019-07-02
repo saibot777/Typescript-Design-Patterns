@@ -9,4 +9,9 @@ const matches = fs
         return row.split(',');
     })
 
-console.log(matches)
+enum MatchResult {
+    HomeWin = 'H',
+    AwayWin ='A',
+    Draw = 'D',
+};
+
