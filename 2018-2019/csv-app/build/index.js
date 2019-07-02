@@ -1,10 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var LinkedList_1 = require("./LinkedList");
-var linkedList = new LinkedList_1.LinkedList();
-linkedList.add(500);
-linkedList.add(-10);
-linkedList.add(-10);
-linkedList.add(500);
-linkedList.sort();
-linkedList.print();
+var fs_1 = __importDefault(require("fs"));
+var matches = fs_1.default.readFileSync('football.csv', {
+    encoding: 'utf-8'
+});
+console.log(matches);
