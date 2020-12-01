@@ -1,18 +1,10 @@
-// this would be some app consts
-const consts = {
-  api_v1: "https://example:2344"
-}
+import { consts, HttpClient } from ".";
 
 interface Employee {
 
 }
-interface HttpClient<T> {
-  // some http library
-  post(url: string, payload: T): Promise<void>
-  get(url: string): Promise<T[]>
-}
 
-async function getEmployees(httpClient: HttpClient<Employee>, filters): Promise<Employee[]> {
+export async function getEmployees(httpClient: HttpClient<Employee>, filters): Promise<Employee[]> {
   try {
     let employees: Employee[] = await httpClient.get(`${consts.api_v1}/employees`);
     employees = applyFilters(employees);
