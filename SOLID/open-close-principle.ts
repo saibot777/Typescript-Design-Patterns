@@ -3,7 +3,7 @@ import { HttpClient } from '.';
 class ErrorHandler {
   public async wrapError(err, publicResponse, severity): Promise<any> {
     // handle logic
-    return await {
+    return {
       publicResponse, severity
     }
   }
